@@ -46,7 +46,7 @@ Ph.D. Student/Graduate Teaching Assistant, Florida International University (FIU
 * **Intern in contingent liabilities, Ministerio de Hacienda y de Crédito Público, Jan 2018 — Jul 2018.**
 
 ## *CV* 
-[Download CV (PDF{: .btn .btn--primary }
+<a href="{{ page.cvurl }}"V</a>
 
 
 
