@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* Ph.D stufen in Economics, Florida International University, 2020 (expected).
+* Ph.D student in Economics, Florida International University, 2028 (expected).
 * M.S. in Jekyll, GitHub University, 2014
 * B.S. in GitHub, GitHub University, 2012
 
