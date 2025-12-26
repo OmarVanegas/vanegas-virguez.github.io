@@ -43,6 +43,6 @@ Work experience
     
 * **Intern in contingent liabilities, Ministerio de Hacienda y de Crédito Público, Jan 2018 — Jul 2018.**
 
-CV [<[atps://github.com/tuusuarioCV](https://omarvanegas.github.io//cv/)](https://omarvanegas.github.io//cv/)
+CV 
 ------
 
