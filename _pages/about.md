@@ -13,16 +13,16 @@ redirect_from:
 Development Economics, Data Science, Economics of Education, Transport Economics, and Causal Inference.
 Ph.D. Student/Graduate Teaching Assistant, Florida International University (FIU), Miami, United States of America
 
-Education
-======
+## *Education*
+
 * **Ph.D student in Economics**, *Florida International University, 2028 (expected).*
 * **M.A. in Economics**, *Universidad Externado de Colombia, 2020.*
 * **B.S. in Economics**, *Universidad Externado de Colombia, 2018.*
 * **Diploma Course in R and Phyton applied for data analysis**, *Universidad Sergio Arboleda, 2022.*
 * **Summer course “Beyond OLS Categorical Choice and Count Models”**, *University of Essex, 2020.*
 
-Work experience
-======
+## *Work experience*
+
 * **Graduate Teaching Assistant, Florida International University, Jan 2024 — Present.**
   * Assist Faculty members of the Department of Economics with a teaching assignment.
   * Preparing lectures, grading assignments, researching class topics, and substituting for Faculty Records on select class days.
@@ -43,6 +43,6 @@ Work experience
     
 * **Intern in contingent liabilities, Ministerio de Hacienda y de Crédito Público, Jan 2018 — Jul 2018.**
 
-CV 
+## *CV*
 
 
