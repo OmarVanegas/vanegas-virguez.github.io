@@ -82,8 +82,8 @@ img.rounded,
 /* (Opcional) Tamaño fijo del avatar: ajusta si lo deseas */
 .author__avatar img,
 .sidebar img.avatar {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 
 /* (Opcional) Borde fino alrededor del cuadrado */
@@ -93,58 +93,4 @@ img.rounded,
 }
 
 
-
-/* =========================================================
-   Avatar a todo el ancho del sidebar (cuadrado y centrado)
-   ========================================================= */
-
-/* Contenedor del avatar: ocupa el ancho disponible y centra el contenido */
-.author__avatar,
-.profile-picture,
-.sidebar .author-image,
-.sidebar .avatar,
-.sidebar .profile {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 0 !important;
-  overflow: hidden;
-
-  /* Centrado por si hay texto o elementos alrededor */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Evita que padding reduzca el ancho útil; ajusta si tu tema usa padding */
-  padding: 0;
-}
-
-/* Imagen del avatar: llena el ancho y se mantiene cuadrada */
-.author__avatar img,
-.profile-picture img,
-.sidebar .author-image img,
-.sidebar .avatar img,
-.sidebar img.avatar,
-img.author__avatar,
-img.avatar {
-  width: 100%;              /* ocupa todo el ancho del contenedor */
-  aspect-ratio: 1 / 1;      /* cuadrado */
-  height: auto;             /* deja que aspect-ratio gestione la altura */
-  object-fit: cover;        /* recorta sin deformar */
-  object-position: center;  /* recorte centrado */
-  border-radius: 0 !important;
-  display: block;           /* elimina gaps por inline images */
-}
-
-/* (Opcional) Borde fino alrededor del cuadrado */
-.author__avatar img,
-.sidebar img.avatar {
-  border: 1px solid #ddd;   /* quítalo si no lo quieres */
-}
-
-/* (Opcional) Si el sidebar tiene padding interno que “encoge” el avatar,
-   puedes permitir que el contenedor se extienda al borde: */
-.sidebar,
-.left-column {
-  box-sizing: border-box;   /* asegura cálculo correcto del ancho */
-}
 
