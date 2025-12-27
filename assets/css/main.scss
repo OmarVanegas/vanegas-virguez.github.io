@@ -43,6 +43,7 @@
 ;
 
 
+
 /* =========================================================
    Overrides: Avatar/Fotos cuadradas en el sidebar y perfil
    ========================================================= */
@@ -57,8 +58,8 @@
 img.author__avatar,
 img.avatar {
   border-radius: 0 !important;     /* quita el círculo/óvalo */
-  aspect-ratio: 1 / 1;              /* fuerza proporción cuadrada */
-  object-fit: cover;                 /* recorta sin deformar */
+  aspect-ratio: 1 / 1;             /* fuerza proporción cuadrada */
+  object-fit: cover;               /* recorta sin deformar */
   overflow: hidden;
 }
 
@@ -79,15 +80,16 @@ img.rounded,
   border-radius: 0 !important;
 }
 
-/* (Opcional) Tamaño fijo del avatar: ajusta si lo deseas */
+/* Tamaño fijo del avatar: ahora más grande */
 .author__avatar img,
 .sidebar img.avatar {
-  width: 200px;
-  height: 200px;
+  width: 400px;   /* antes 200px */
+  height: 400px;  /* antes 200px */
 }
 
-/* (Opcional) Borde fino alrededor del cuadrado */
+/* Borde fino alrededor del cuadrado (opcional) */
 .author__avatar img,
 .sidebar img.avatar {
-  border: 1px solid #ddd;           /* quítalo si no lo quieres */
+  border: 1px solid #ddd;          /* quítalo si no lo quieres */
 }
+
