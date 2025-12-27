@@ -7,7 +7,7 @@ excerpt: 'This paper is about the number 1. The number 2 is left for future work
 date: 2025
 venue: 'Review of Development Economics'
 slidesurl: 'https://academicpages.github.io/files/slides1.pdf'
-paperurl: '[https://academicpages.github.io/files/paper1.pdf](https://doi.org/10.1111/rode.13125)'
+paperurl: 'https://onlinelibrary.wiley.com/doi/10.1111/rode.13125'
 bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'
 citation: 'Jara, H. X., Rodríguez, D., Collado, D., Torres, J., Mideros, A., Montesdeoca, L., Avellaneda, A., Chang, R., & Vanegas, O. (2025). Assessing the role of tax-benefit policies during the COVID-19 pandemic: Evidence from the Andean region. Review of Development Economics, 29(1), 226-246. https://doi.org/10.1111/rode.13125'
 ---
