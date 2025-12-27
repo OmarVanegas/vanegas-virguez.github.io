@@ -59,11 +59,11 @@ img.avatar {
   border-radius: 0 !important;   /* elimina círculo/óvalo */
   object-fit: cover;              /* recorta sin deformar */
   object-position: center;        /* centra el recorte */
-  display: block;                 /* evita gaps de inline images */
+  display: inline-block;          /* no ocupa todo el ancho del contenedor */
   overflow: hidden;
 }
 
-/* Contenedores que podrían tener border-radius o limitar tamaño */
+/* Contenedores del avatar: centrado sin usar flex para no empujar el layout */
 .author__avatar,
 .profile-picture,
 .sidebar .author-image,
@@ -71,11 +71,8 @@ img.avatar {
 .sidebar .avatar {
   border-radius: 0 !important;
   overflow: hidden;
-
-  /* centra la imagen dentro del contenedor */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;             /* centra la imagen sin alterar el flujo */
+  padding: 0;
 }
 
 /* Si el tema aplica una clase genérica .rounded, la anulamos */
@@ -86,7 +83,7 @@ img.rounded,
 }
 
 /* =========================================================
-   Tamaño del avatar: cuadrado 250x250
+   Tamaño del avatar (desktop): cuadrado 180x180
    ========================================================= */
 .author__avatar img,
 .sidebar img.avatar,
@@ -95,13 +92,14 @@ img.rounded,
 .sidebar .profile img,
 img.author__avatar,
 img.avatar {
-  width: 150px;
-  height: 150px;           /* asegura 250x250 */
+  width: 180px;
+  height: 180px;           /* asegura 180x180 */
+  max-width: 100%;         /* nunca excede el ancho del contenedor */
   border: 1px solid #ddd;  /* opcional: quita si no quieres borde */
 }
 
 /* =========================================================
-   (Opcional) Responsive: tamaño menor en pantallas pequeñas
+   Responsive (móvil): cuadrado 150x150
    ========================================================= */
 @media (max-width: 480px) {
   .author__avatar img,
@@ -115,5 +113,3 @@ img.avatar {
     height: 150px;
   }
 }
-
-
