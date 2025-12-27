@@ -1,4 +1,3 @@
-
 ---
 ---
 
@@ -6,7 +5,7 @@
  * This file controls what is imported from /_sass
  *
  * Note that the files are processed in the order they are imported, so they are partly
- * sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
 @import
@@ -43,11 +42,12 @@
     "vendor/font-awesome/brands"
 ;
 
+
 /* =========================================================
    Overrides: Avatar/Fotos cuadradas en el sidebar y perfil
    ========================================================= */
 
-/* Imagen del perfil/autor: quita borde redondeado y asegura recorte correcto */
+/* Imagen del perfil/autor: elimina el borde redondeado del <img> */
 .author__avatar img,
 .profile-picture img,
 .sidebar .author-image img,
@@ -56,14 +56,13 @@
 .sidebar img.avatar,
 img.author__avatar,
 img.avatar {
-  border-radius: 0 !important;   /* elimina círculo/óvalo */
-  object-fit: cover;              /* recorta sin deformar */
-  object-position: center;        /* centra el recorte */
-  display: inline-block;          /* no ocupa todo el ancho del contenedor */
+  border-radius: 0 !important;     /* quita el círculo/óvalo */
+  aspect-ratio: 1 / 1;              /* fuerza proporción cuadrada */
+  object-fit: cover;                 /* recorta sin deformar */
   overflow: hidden;
 }
 
-/* Contenedores del avatar: centrado sin usar flex para no empujar el layout */
+/* Contenedores que a veces también traen border-radius */
 .author__avatar,
 .profile-picture,
 .sidebar .author-image,
@@ -71,45 +70,24 @@ img.avatar {
 .sidebar .avatar {
   border-radius: 0 !important;
   overflow: hidden;
-  text-align: center;             /* centra la imagen sin alterar el flujo */
-  padding: 0;
 }
 
-/* Si el tema aplica una clase genérica .rounded, la anulamos */
+/* Si el tema aplica una clase genérica .rounded */
 .rounded,
 img.rounded,
 .rounded img {
   border-radius: 0 !important;
 }
 
-/* =========================================================
-   Tamaño del avatar (desktop): cuadrado 180x180
-   ========================================================= */
+/* (Opcional) Tamaño fijo del avatar: ajusta si lo deseas */
 .author__avatar img,
-.sidebar img.avatar,
-.profile-picture img,
-.sidebar .author-image img,
-.sidebar .profile img,
-img.author__avatar,
-img.avatar {
-  width: 180px;
-  height: 180px;           /* asegura 180x180 */
-  max-width: 100%;         /* nunca excede el ancho del contenedor */
-  border: 1px solid #ddd;  /* opcional: quita si no quieres borde */
+.sidebar img.avatar {
+  width: 200px;
+  height: 200px;
 }
 
-/* =========================================================
-   Responsive (móvil): cuadrado 150x150
-   ========================================================= */
-@media (max-width: 480px) {
-  .author__avatar img,
-  .sidebar img.avatar,
-  .profile-picture img,
-  .sidebar .author-image img,
-  .sidebar .profile img,
-  img.author__avatar,
-  img.avatar {
-    width: 150px;
-    height: 150px;
-  }
+/* (Opcional) Borde fino alrededor del cuadrado */
+.author__avatar img,
+.sidebar img.avatar {
+  border: 1px solid #ddd;           /* quítalo si no lo quieres */
 }
