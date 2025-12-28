@@ -68,3 +68,47 @@
   }
 }
 
+
+
+/* === Empujar el layout hacia la derecha === */
+/* Estos selectores cubren la mayoría de temas (usa los que existan en tu HTML). */
+.page, .wrap, .container, .page__inner {
+  margin-left: 48px;      /* AJUSTA: 32–64px según tu gusto */
+}
+
+
+
+/* === Sidebar más ancha y a la derecha (Flex) === */
+.page__inner {
+  display: flex;
+  flex-direction: row-reverse;  /* sidebar a la derecha */
+  align-items: flex-start;
+  gap: 1.25rem;                 /* separación visual entre columnas */
+}
+
+.sidebar {
+  flex: 0 0 360px;              /* AJUSTA: 340–420px para más ancho */
+  max-width: 420px;             /* límite opcional */
+}
+
+.page__content {
+  flex: 1 1 auto;
+  min-width: 0;                 /* evita overflow del texto */
+}
+
+/* Responsive: en móviles, sin margen extra y apilado vertical */
+@media (max-width: 900px) {
+  .page, .wrap, .container, .page__inner {
+    margin-left: 0;
+  }
+  .page__inner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+  }
+}
+
