@@ -1,37 +1,62 @@
 
-/* --- Hacer la barra lateral más ancha --- */
 
-/* Contenedor principal con sidebar a la derecha */
+/* === 1) Mover todo más a la derecha (añadir margen a la izquierda) === */
+/* Aplica un margen a la envoltura principal para empujar el contenido hacia la derecha.
+   Si tu tema usa .page, .wrap o .container, estas reglas lo cubren. */
+.page, .wrap, .container, .page__inner {
+  margin-left: 48px;     /* AJUSTA: 32–64px según lo que quieras */
+}
+
+/* === 2) Sidebar a la derecha y más ancha === */
 .page__inner {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse;  /* sidebar a la derecha */
   align-items: flex-start;
 }
 
-/* Sidebar: ancho fijo mayor */
 .sidebar {
-  flex: 0 0 340px;   /* ancho fijo: cámbialo a 360px, 380px si quieres más */
-  max-width: 380px;  /* límite opcional */
+  /* haz la barra lateral más ancha */
+  flex: 0 0 360px;       /* AJUSTA: 340–420px */
+  max-width: 420px;      /* límite opcional */
 }
 
-/* Contenido principal: ocupa el resto */
+/* El contenido ocupa el resto del ancho disponible */
 .page__content {
   flex: 1 1 auto;
   min-width: 0;
 }
 
-/* Ajustes internos para evitar desbordes */
-.sidebar img,
-.sidebar .author__avatar img,
-.sidebar .author__content,
-.sidebar .author__urls-wrapper {
-  max-width: 100%;
+/* === 3) Imagen de la sidebar más ancha === */
+/* Muchos temas usan un contenedor .author__avatar o .author__image para la foto. */
+.author__avatar,
+.author__image {
+  width: 100%;           /* que use todo el ancho de la sidebar */
+  max-width: none;
 }
 
-/* Responsive: en móviles, sidebar ocupa todo el ancho */
+.author__avatar img,
+.author__image img {
+  display: block;
+  width: 100%;           /* la imagen se ensancha con la sidebar */
+  height: auto;          /* mantiene proporciones */
+  object-fit: cover;     /* recorte elegante si fuera necesario */
+  border-radius: 4px;    /* opcional: esquinas suaves */
+}
+
+/* (Opcional) separa visualmente sidebar y contenido si lo deseas */
+.page__inner {
+  gap: 1.5rem;
+}
+
+/* === Responsive: en móviles, apilar y usar ancho completo === */
 @media (max-width: 900px) {
+  .page, .wrap, .container, .page__inner {
+    margin-left: 0;      /* no empujes a la derecha en pantallas pequeñas */
+  }
+
   .page__inner {
     flex-direction: column;
+    gap: 0.75rem;
   }
 
   .sidebar {
