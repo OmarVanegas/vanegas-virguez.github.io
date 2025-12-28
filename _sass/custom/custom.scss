@@ -1,82 +1,76 @@
-
-/* === Empujar el layout hacia la derecha === */
-.page, .wrap, .container, .page__inner, .site-content, .main {
-  margin-left: 48px; /* AJUSTA 32–64px */
+/* === 1) Mover todo más a la derecha (añadir margen a la izquierda) === */
+/* Aplica un margen a la envoltura principal para empujar el contenido hacia la derecha.
+   Si tu tema usa .page, .wrap o .container, estas reglas lo cubren. */
+.page, .wrap, .container, .page__inner {
+  margin-left: 48px;     /* AJUSTA: 32–64px según lo que quieras */
 }
 
-/* === Sidebar más ancha y a la derecha === */
-/* Aseguramos que el contenedor sea flex y la sidebar esté a la derecha */
-.layout--single .page__inner,
-.layout--home   .page__inner,
-.layout--archive .page__inner,
+/* === 2) Sidebar a la derecha y más ancha === */
 .page__inner {
-  display: flex !important;
-  flex-direction: row-reverse !important;
+  display: flex;
+  flex-direction: row-reverse;  /* sidebar a la derecha */
   align-items: flex-start;
-  gap: 1.25rem;
 }
 
-/* Sidebar: contemplamos varios alias comunes */
-.sidebar,
-.page__sidebar,
-aside.sidebar {
-  flex: 0 0 380px !important;  /* AJUSTA: 360–420px */
-  max-width: 420px;
+.sidebar {
+  /* haz la barra lateral más ancha */
+  flex: 0 0 360px;       /* AJUSTA: 340–420px */
+  max-width: 420px;      /* límite opcional */
 }
 
-/* Contenido ocupa el resto */
-.page__content,
-.content,
-.main-content {
+/* El contenido ocupa el resto del ancho disponible */
+.page__content {
   flex: 1 1 auto;
   min-width: 0;
 }
 
-/* === Imagen del perfil más ancha (llenar la sidebar) === */
-/* Cubrimos varios contenedores posibles de avatar/imágenes */
+/* === 3) Imagen de la sidebar más ancha === */
+/* Muchos temas usan un contenedor .author__avatar o .author__image para la foto. */
 .author__avatar,
-.author__image,
-.sidebar .author-image,
-.sidebar .profile,
-.sidebar .avatar {
-  width: 100%;
+.author__image {
+  width: 100%;           /* que use todo el ancho de la sidebar */
   max-width: none;
-  border-radius: 0;
-  overflow: hidden;
 }
 
 .author__avatar img,
-.author__image img,
-.sidebar .author-image img,
-.sidebar img.avatar,
-img.author__avatar,
-img.avatar {
+.author__image img {
   display: block;
-  width: 100% !important;  /* llenar ancho de la sidebar */
-  height: auto !important; /* mantener proporción */
-  aspect-ratio: 1 / 1;     /* cuadrado adaptable (opcional) */
-  object-fit: cover;
-  border-radius: 0;
-  border: 1px solid #ddd;  /* opcional */
+  width: 100%;           /* la imagen se ensancha con la sidebar */
+  height: auto;          /* mantiene proporciones */
+  object-fit: cover;     /* recorte elegante si fuera necesario */
+  border-radius: 4px;    /* opcional: esquinas suaves */
 }
 
-/* === Responsive === */
+/* (Opcional) separa visualmente sidebar y contenido si lo deseas */
+.page__inner {
+  gap: 1.5rem;
+}
+
+/* === Responsive: en móviles, apilar y usar ancho completo === */
 @media (max-width: 900px) {
-  .page, .wrap, .container, .page__inner, .site-content, .main {
-    margin-left: 0;
+  .page, .wrap, .container, .page__inner {
+    margin-left: 0;      /* no empujes a la derecha en pantallas pequeñas */
   }
-  .layout--single .page__inner,
-  .layout--home   .page__inner,
-  .layout--archive .page__inner,
+
   .page__inner {
-    flex-direction: column !important;
+    flex-direction: column;
     gap: 0.75rem;
   }
-  .sidebar,
-  .page__sidebar,
-  aside.sidebar {
-    flex: 0 0 auto !important;
+
+  .sidebar {
+    flex: 0 0 auto;
     width: 100%;
     max-width: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
+
+
+
+/* === Empujar el layout hacia la derecha === */
+/* Estos selectores cubren la mayoría de temas (usa los que existan en tu HTML). */
+.page, .wrap, .container, .page__inner {
+  margin-left: 48px;      /* AJUSTA: 32–64px según tu gusto */
+}
+
